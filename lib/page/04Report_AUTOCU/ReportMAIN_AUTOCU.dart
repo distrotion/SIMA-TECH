@@ -63,112 +63,72 @@ class _CsvPicker_AUTOCUState extends State<CsvPicker_AUTOCU> {
           scrollDirection: Axis.horizontal,
           child: Column(
             children: [
-              Container(
-                width: 7000,
-                child: Row(
-                  children: [
-                    InkWell(
+              Row(
+                children: [
+                  InkWell(
+                      onTap: () {
+                        _selectDate(context);
+                      },
+                      child: SizedBox(
+                          height: 50,
+                          width: 100,
+                          child: Center(
+                              child: Text("${_selectedDate.toLocal()}"
+                                  .split(' ')[0])))),
+                  Container(
+                    color: Colors.green,
+                    height: 50,
+                    width: 100,
+                    child: InkWell(
+                        child: const Center(
+                          child: Text(
+                            "READ ONLY",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                         onTap: () {
-                          _selectDate(context);
-                        },
-                        child: SizedBox(
-                            height: 50,
-                            width: 100,
-                            child: Center(
-                                child: Text("${_selectedDate.toLocal()}"
-                                    .split(' ')[0])))),
-                    Container(
-                      color: Colors.green,
-                      height: 50,
-                      width: 100,
-                      child: InkWell(
-                          child: const Center(
-                            child: Text(
-                              "READ ONLY",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              print(ReportVAR_AUTOCU.selectedDate);
-                              if (ReportVAR_AUTOCU.selectedDate != '') {
-                                //
-                                context
-                                    .read<CsvExport_AUTOCU_Bloc>()
-                                    .add(CsvExport_AUTOCUGetData_R());
-                              }
-                              // final List data = csvdata;
-                              // ExpCSV(data);
-                            });
-                          }),
-                    ),
-                    Container(
-                      color: Colors.blue,
-                      height: 50,
-                      width: 100,
-                      child: InkWell(
-                          child: const Center(
-                            child: Text(
-                              "Export to CSV",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          onTap: () {
-                            setState(() {
-                              print(ReportVAR_AUTOCU.selectedDate);
-                              if (ReportVAR_AUTOCU.selectedDate != '') {
-                                //
-                                context
-                                    .read<CsvExport_AUTOCU_Bloc>()
-                                    .add(CsvExport_AUTOCUGetData());
-                              }
-                              // final List data = csvdata;
-                              // ExpCSV(data);
-                            });
-                          }),
-                    ),
-                    //
-                    Container(
-                      color: Colors.orange,
-                      height: 50,
-                      width: 150,
-                      child: InkWell(
-                          child: const Center(
-                            child: Text(
-                              "Import Name&Qty",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          onTap: () async {
-                            var picked = await FilePicker.platform.pickFiles(
-                              type: FileType.custom,
-                              allowedExtensions: ['csv'],
-                            );
-                            Uint8List? datacsv;
-
-                            if (picked != null) {
-                              datacsv = picked.files.first.bytes;
-                              const asciiDecoder = AsciiDecoder();
-                              final result =
-                                  asciiDecoder.convert(datacsv!.toList());
-                              final response = await Dio().post(
-                                server + "PNQTYupload_AUTOCU",
-                                data: {
-                                  "rawcsv": result,
-                                },
-                              ).then((value) {
-                                if (ReportVAR_AUTOCU.selectedDate != '') {
-                                  //
-                                  context
-                                      .read<CsvExport_AUTOCU_Bloc>()
-                                      .add(CsvExport_AUTOCUGetData_R());
-                                }
-                              });
+                          setState(() {
+                            print(ReportVAR_AUTOCU.selectedDate);
+                            if (ReportVAR_AUTOCU.selectedDate != '') {
+                              //
+                              context
+                                  .read<CsvExport_AUTOCU_Bloc>()
+                                  .add(CsvExport_AUTOCUGetData_R());
                             }
-                          }),
-                    ),
-                  ],
-                ),
+                            // final List data = csvdata;
+                            // ExpCSV(data);
+                          });
+                        }),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    height: 50,
+                    width: 100,
+                    child: InkWell(
+                        child: const Center(
+                          child: Text(
+                            "Export to CSV",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        onTap: () {
+                          setState(() {
+                            print(ReportVAR_AUTOCU.selectedDate);
+                            if (ReportVAR_AUTOCU.selectedDate != '') {
+                              //
+                              context
+                                  .read<CsvExport_AUTOCU_Bloc>()
+                                  .add(CsvExport_AUTOCUGetData());
+                            }
+                            // final List data = csvdata;
+                            // ExpCSV(data);
+                          });
+                        }),
+                  ),
+                  SizedBox(
+                    width: 5700,
+                  )
+                ],
               ),
               MasterTable_AUTOCU(),
               Expanded(
@@ -186,6 +146,7 @@ class _CsvPicker_AUTOCUState extends State<CsvPicker_AUTOCU> {
                           PartName: _datatable[i].PartName,
                           QTY: _datatable[i].QTY,
                           LoadingTime01: _datatable[i].LoadingTime01,
+                          UnloadingTime47: _datatable[i].UnloadingTime47,
                           Tank02Temp: _datatable[i].Tank02Temp,
                           Tank02Time: _datatable[i].Tank02Time,
                           Tank03Temp: _datatable[i].Tank03Temp,
@@ -323,6 +284,7 @@ class _CsvPicker_AUTOCUState extends State<CsvPicker_AUTOCU> {
                           Tank44Time: _datatable[i].Tank44Time,
                           Tank45Temp: _datatable[i].Tank45Temp,
                           Tank45Time: _datatable[i].Tank45Time,
+                          Tank46Time: _datatable[i].Tank46Time,
                         ),
                       ]
                     ],

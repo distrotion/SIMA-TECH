@@ -95,7 +95,7 @@ class Logo1 extends StatelessWidget {
       child: Container(
         color: Color(0xff0b1327),
         child: Text(
-          "Yamato denki Fac01",
+          'Sima technology co. ltd',
           style: TextStyle(
             fontFamily: 'Mitr',
             color: Colors.white,
@@ -195,17 +195,17 @@ String namepage(int input) {
   String output = 'Main Menu';
 
   if (input == 1) {
-    output = "AUTO SN";
+    output = "AUTO Remove Oxide";
   } else if (input == 2) {
-    output = "AUTO SN ";
+    output = "AUTO Remove Oxide";
   } else if (input == 3) {
-    output = "AUTO CU";
+    output = "AUTO Remove Oxide";
   } else if (input == 4) {
-    output = "AUTO CU";
+    output = "AUTO Remove Oxide";
   } else if (input == 5) {
-    output = "AUTO PEELING 02";
+    output = "AUTO Remove Oxide";
   } else if (input == 6) {
-    output = "AUTO PEELING 02";
+    output = "AUTO Remove Oxide";
   }
 
   return output;

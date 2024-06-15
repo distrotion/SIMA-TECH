@@ -55,7 +55,7 @@ class _DashBoard_AUTOCUBodyState extends State<DashBoard_AUTOCUBody> {
     dhcontext_autocu
         .read<ACTUALDATA_AUTOCU_Bloc>()
         .add(ACTUALDATA_AUTOCU_Pressed());
-    Timer.periodic(const Duration(seconds: 5), (timmer) {
+    _timer = Timer.periodic(const Duration(seconds: 5), (timmer) {
       dhcontext_autocu
           .read<ACTUALDATA_AUTOCU_Bloc>()
           .add(ACTUALDATA_AUTOCU_Pressed());
@@ -65,6 +65,15 @@ class _DashBoard_AUTOCUBodyState extends State<DashBoard_AUTOCUBody> {
 
     //----------
     // timer.cancel();
+  }
+
+  Timer? _timer;
+
+  @override
+  void dispose() {
+    // Dispose the timer when the widget is disposed
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -113,6 +122,7 @@ class _DashBoard_AUTOCUBodyState extends State<DashBoard_AUTOCUBody> {
                         PartName: _datatable[i].PartName,
                         QTY: _datatable[i].QTY,
                         LoadingTime01: _datatable[i].LoadingTime01,
+                        UnloadingTime47: _datatable[i].UnloadingTime47,
                         Tank02Temp: _datatable[i].Tank02Temp,
                         Tank02Time: _datatable[i].Tank02Time,
                         Tank03Temp: _datatable[i].Tank03Temp,
@@ -250,6 +260,8 @@ class _DashBoard_AUTOCUBodyState extends State<DashBoard_AUTOCUBody> {
                         Tank44Time: _datatable[i].Tank44Time,
                         Tank45Temp: _datatable[i].Tank45Temp,
                         Tank45Time: _datatable[i].Tank45Time,
+                        Tank46Temp: _datatable[i].Tank46Temp,
+                        Tank46Time: _datatable[i].Tank46Time,
                       ),
                     ],
                   ]),

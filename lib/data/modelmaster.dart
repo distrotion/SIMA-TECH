@@ -7,6 +7,7 @@ class YMDDATAMASTERmodel {
     this.PartName = '',
     this.QTY = '',
     this.LoadingTime01 = '',
+    this.UnloadingTime47 = '',
     this.Tank02Temp = '',
     this.Tank02Time = '',
     this.Tank03Temp = '',
@@ -144,6 +145,10 @@ class YMDDATAMASTERmodel {
     this.Tank44Time = '',
     this.Tank45Temp = '',
     this.Tank45Time = '',
+    this.Tank46Temp = '',
+    this.Tank46Time = '',
+    this.Tank47Temp = '',
+    this.Tank47Time = '',
   });
   String NO;
   String Item;
@@ -152,6 +157,7 @@ class YMDDATAMASTERmodel {
   String PartName;
   String QTY;
   String LoadingTime01;
+  String UnloadingTime47;
   String Tank02Temp;
   String Tank02Time;
   String Tank03Temp;
@@ -289,6 +295,10 @@ class YMDDATAMASTERmodel {
   String Tank44Time;
   String Tank45Temp;
   String Tank45Time;
+  String Tank46Temp;
+  String Tank46Time;
+  String Tank47Temp;
+  String Tank47Time;
 
   int? nint;
 }

@@ -6,6 +6,7 @@ import '../../data/dummy2.dart';
 import '../../data/global.dart';
 import '../../data/model.dart';
 import '../../data/modelmaster.dart';
+import '../../data/simatechlite.dart';
 import '../../data/test.dart';
 
 //-------------------------------------------------
@@ -26,7 +27,7 @@ class ACTUALDATA_AUTOCU_Bloc
   Future<void> _Function_01(List<YMDDATAMASTERmodel> toAdd,
       Emitter<List<YMDDATAMASTERmodel>> emit) async {
     // final response = await Dio().post(
-    //   server + "Today_AUTOCU",
+    //   server + "Today_AUTORM",
     //   data: {},
     // );
 
@@ -34,7 +35,8 @@ class ACTUALDATA_AUTOCU_Bloc
     // if (response.statusCode == 200) {
     if (true) {
       // var databuff = response.data;
-      var databuff = testdummy;
+      // var databuff = testdummy;
+      var databuff = data150624;
       // print(databuff);
       int numtest = databuff.length;
       if (databuff.length > 50) {
@@ -44,63 +46,103 @@ class ACTUALDATA_AUTOCU_Bloc
         //
         output.add(YMDDATAMASTERmodel(
           NO: '${i + 1}',
-          Item: _NullCheck(databuff[i]['ItemID']),
-          ItemNO: _NullCheck(databuff[i]['ItemNO']),
-          PartNO: _NullCheck(databuff[i]['PartNumber']),
-          PartName: _NullCheck(databuff[i]['PartName']),
-          QTY: _NullCheck(databuff[i]['QTY']),
-          LoadingTime01: _daycon(_NullCheck(databuff[i]['LoadingTime'])),
-          Tank02Temp: todesimol(_NullCheck(databuff[i]['State02tempPV'])),
+          Item: _NullCheck(databuff[i]['BarNo']),
+          PartNO: _NullCheck(databuff[i]['Program']),
+          PartName: _Decimal_To_Text(_NullCheck(databuff[i]['ProgramName'])),
+
+          LoadingTime01: _daycon(_NullCheck(databuff[i]['TimeGetIn'])),
+          UnloadingTime47: _daycon(_NullCheck(databuff[i]['TimeGetOut'])),
+
+          Tank02Temp: _NullCheck(databuff[i]['State02timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde01'])),
           Tank02Time: _NullCheck(databuff[i]['State02timePV']),
 
           Tank03Time: _NullCheck(databuff[i]['State03timePV']),
-          Tank03Temp: todesimol(_NullCheck(databuff[i]['State03tempPV'])),
+          Tank03Temp: _NullCheck(databuff[i]['State03timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde01'])),
           Tank04Time: _NullCheck(databuff[i]['State04timePV']),
-          Tank04Temp: todesimol(_NullCheck(databuff[i]['State04tempPV'])),
+          Tank04Temp: _NullCheck(databuff[i]['State04timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde01'])),
           Tank05Time: _NullCheck(databuff[i]['State05timePV']),
-          Tank05Temp: todesimol(_NullCheck(databuff[i]['State05tempPV'])),
+          Tank05Temp: _NullCheck(databuff[i]['State05timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde01'])),
           Tank06Time: _NullCheck(databuff[i]['State06timePV']),
-          Tank06Temp: todesimol(_NullCheck(databuff[i]['State06tempPV'])),
+          Tank06Temp: _NullCheck(databuff[i]['State06timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde02'])),
           Tank07Time: _NullCheck(databuff[i]['State07timePV']),
-          Tank07Temp: todesimol(_NullCheck(databuff[i]['State07tempPV'])),
+          Tank07Temp: _NullCheck(databuff[i]['State07timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde02'])),
           Tank08Time: _NullCheck(databuff[i]['State08timePV']),
-          Tank08Temp: todesimol(_NullCheck(databuff[i]['State08tempPV'])),
+          Tank08Temp: _NullCheck(databuff[i]['State08timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde02'])),
           Tank09Time: _NullCheck(databuff[i]['State09timePV']),
-          Tank09Temp: todesimol(_NullCheck(databuff[i]['State09tempPV'])),
+          Tank09Temp: _NullCheck(databuff[i]['State09timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde02'])),
           Tank10Time: _NullCheck(databuff[i]['State10timePV']),
-          Tank10Temp: todesimol(_NullCheck(databuff[i]['State10tempPV'])),
+          Tank10Temp: _NullCheck(databuff[i]['State10timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde03'])),
           Tank11Time: _NullCheck(databuff[i]['State11timePV']),
-          Tank11Temp: todesimol(_NullCheck(databuff[i]['State11tempPV'])),
+          Tank11Temp: _NullCheck(databuff[i]['State11timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde03'])),
           Tank12Time: _NullCheck(databuff[i]['State12timePV']),
-          Tank12Temp: todesimol(_NullCheck(databuff[i]['State12tempPV'])),
+          Tank12Temp: _NullCheck(databuff[i]['State12timePV']) == ''
+              ? ''
+              : _NullCheck(databuff[i]['State12timePV']) == ''
+                  ? ''
+                  : todesimol(_NullCheck(databuff[i]['TempOxde03'])),
           Tank13Time: _NullCheck(databuff[i]['State13timePV']),
-          Tank13Temp: todesimol(_NullCheck(databuff[i]['State13tempPV'])),
+          Tank13Temp: _NullCheck(databuff[i]['State13timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde03'])),
           Tank14Time: _NullCheck(databuff[i]['State14timePV']),
-          Tank14Temp: todesimol(_NullCheck(databuff[i]['State14tempPV'])),
+          Tank14Temp: _NullCheck(databuff[i]['State14timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde04'])),
           Tank15Time: _NullCheck(databuff[i]['State15timePV']),
-          Tank15Temp: todesimol(_NullCheck(databuff[i]['State15tempPV'])),
+          Tank15Temp: _NullCheck(databuff[i]['State15timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde04'])),
           Tank16Time: _NullCheck(databuff[i]['State16timePV']),
-          Tank16Temp: todesimol(_NullCheck(databuff[i]['State16tempPV'])),
+          Tank16Temp: _NullCheck(databuff[i]['State16timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde04'])),
           //
-          Tank17Volt: todesimol(_NullCheck(databuff[i]['State17voltPV'])),
-          Tank17Amp: _NullCheck(databuff[i]['State17amPV']),
-          Tank17Temp: todesimol(_NullCheck(databuff[i]['State17tempPV'])),
-          Tank17Rpm: _NullCheck(databuff[i]['State17rpmPV']),
+
+          Tank17Temp: _NullCheck(databuff[i]['State17timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde04'])),
           Tank17Time: _NullCheck(databuff[i]['State17timePV']),
           //
           Tank18Time: _NullCheck(databuff[i]['State18timePV']),
-          Tank18Temp: todesimol(_NullCheck(databuff[i]['State18tempPV'])),
+          Tank18Temp: _NullCheck(databuff[i]['State18timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde05'])),
           Tank19Time: _NullCheck(databuff[i]['State19timePV']),
-          Tank19Temp: todesimol(_NullCheck(databuff[i]['State19tempPV'])),
+          Tank19Temp: _NullCheck(databuff[i]['State19timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde05'])),
           //
-          Tank20Volt: todesimol(_NullCheck(databuff[i]['State20voltPV'])),
-          Tank20Amp: _NullCheck(databuff[i]['State20amPV']),
-          Tank20Temp: todesimol(_NullCheck(databuff[i]['State20tempPV'])),
-          Tank20Rpm: _NullCheck(databuff[i]['State20rpmPV']),
+
+          Tank20Temp: _NullCheck(databuff[i]['State20timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde05'])),
+
           Tank20Time: _NullCheck(databuff[i]['State20timePV']),
           //
           Tank21Time: _NullCheck(databuff[i]['State21timePV']),
-          Tank21Temp: todesimol(_NullCheck(databuff[i]['State21tempPV'])),
+          Tank21Temp: _NullCheck(databuff[i]['State21timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempOxde05'])),
           Tank22Time: _NullCheck(databuff[i]['State22timePV']),
           Tank22Temp: todesimol(_NullCheck(databuff[i]['State22tempPV'])),
           Tank23Time: _NullCheck(databuff[i]['State23timePV']),
@@ -125,7 +167,9 @@ class ACTUALDATA_AUTOCU_Bloc
 
           Tank28Volt: todesimol(_NullCheck(databuff[i]['State28voltPV'])),
           Tank28Amp: _NullCheck(databuff[i]['State28amPV']),
-          Tank28Temp: todesimol(_NullCheck(databuff[i]['State28tempPV'])),
+          Tank28Temp: _NullCheck(databuff[i]['State28timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHCL28'])),
           Tank28Rpm: _NullCheck(databuff[i]['State28rpmPV']),
           Tank28Time: _NullCheck(databuff[i]['State28timePV']),
           //
@@ -153,14 +197,16 @@ class ACTUALDATA_AUTOCU_Bloc
           Tank33Rpm: _NullCheck(databuff[i]['State33rpmPV']),
           Tank33Time: _NullCheck(databuff[i]['State33timePV']),
 
-          Tank34Volt: todesimol(_NullCheck(databuff[i]['State34voltPV'])),
-          Tank34Amp: _NullCheck(databuff[i]['State34amPV']),
-          Tank34Temp: todesimol(_NullCheck(databuff[i]['State34tempPV'])),
-          Tank34Rpm: _NullCheck(databuff[i]['State34rpmPV']),
+          Tank34Temp: _NullCheck(databuff[i]['State34timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHCL34'])),
+
           Tank34Time: _NullCheck(databuff[i]['State34timePV']),
           //
           Tank35Time: _NullCheck(databuff[i]['State35timePV']),
-          Tank35Temp: todesimol(_NullCheck(databuff[i]['State35tempPV'])),
+          Tank35Temp: _NullCheck(databuff[i]['State35timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHCL35'])),
           //
           Tank36Volt: todesimol(_NullCheck(databuff[i]['State36voltPV'])),
           Tank36Amp: _NullCheck(databuff[i]['State36amPV']),
@@ -188,9 +234,19 @@ class ACTUALDATA_AUTOCU_Bloc
           Tank43Time: _NullCheck(databuff[i]['State43timePV']),
           Tank43Temp: todesimol(_NullCheck(databuff[i]['State43tempPV'])),
           Tank44Time: _NullCheck(databuff[i]['State44timePV']),
-          Tank44Temp: todesimol(_NullCheck(databuff[i]['State44tempPV'])),
+          Tank44Temp: _NullCheck(databuff[i]['State44timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHOT1'])),
           Tank45Time: _NullCheck(databuff[i]['State45timePV']),
-          Tank45Temp: todesimol(_NullCheck(databuff[i]['State45tempPV'])),
+          Tank45Temp: _NullCheck(databuff[i]['State45timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHOT2'])),
+          Tank46Time: _NullCheck(databuff[i]['State46timePV']),
+          Tank46Temp: _NullCheck(databuff[i]['State46timePV']) == ''
+              ? ''
+              : todesimol(_NullCheck(databuff[i]['TempHOT3'])),
+          Tank47Time: _NullCheck(databuff[i]['State47timePV']),
+          Tank47Temp: todesimol(_NullCheck(databuff[i]['State47tempPV'])),
         ));
       }
     } else {}
@@ -202,7 +258,11 @@ String _NullCheck(dynamic input) {
   String output = '-';
   if (input != null) {
     if (input != '0') {
-      output = input.toString();
+      if (input != 'NULL') {
+        output = input.toString();
+      } else {
+        output = '';
+      }
     }
   }
   return output;
@@ -243,4 +303,31 @@ String todesimol(String s) {
   }
 
   return output;
+}
+
+_Decimal_To_Text(String text) {
+  String input_Decimal_all = "";
+  input_Decimal_all = text;
+  List<String> list_Decimal_all = input_Decimal_all.split(",");
+
+  String text_all = "";
+  List<String> list_text_all = [];
+  for (int i = 0; i < list_Decimal_all.length; i++) {
+    String input_Decimal = "";
+    String binary = "";
+    String binary_4_R = "";
+    String binary_4_L = "";
+    String text_1 = "";
+    String text_2 = "";
+    input_Decimal = list_Decimal_all[i];
+    binary = int.parse(input_Decimal).toRadixString(2).padLeft(16, "0");
+    binary_4_R = binary.substring(8);
+    binary_4_L = binary.substring(0, 8);
+    text_1 = String.fromCharCode(int.parse(binary_4_R, radix: 2));
+    text_2 = String.fromCharCode(int.parse(binary_4_L, radix: 2));
+    list_text_all.add(text_1);
+    list_text_all.add(text_2);
+  }
+  text_all = list_text_all.join();
+  return text_all;
 }

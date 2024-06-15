@@ -38,7 +38,7 @@ class MainContext extends StatelessWidget {
     return BlocBuilder<BlocPageRebuild, bool>(
       builder: (_, e) {
         return MaterialApp(
-          title: 'Yamato Fac01',
+          title: 'Sima technology co. ltd',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),

@@ -56,7 +56,7 @@ class CsvExport_Bloc extends Bloc<CsvExport_Event, List<YMDDATAmodel>> {
     // if (response.statusCode == 200) {
     if (true) {
       // var databuff = response.data;
-      var databuff = datasimalite;
+      var databuff = data150624;
       // var databuff = testdata;
 
       for (var i = 0; i < databuff.length; i++) {
@@ -246,7 +246,7 @@ class CsvExport_Bloc extends Bloc<CsvExport_Event, List<YMDDATAmodel>> {
     // if (response.statusCode == 200) {
     if (true) {
       // var databuff = response.data;
-      var databuff = datasimalite;
+      var databuff = data150624;
       // var databuff = testdata;
 
       for (var i = 0; i < databuff.length; i++) {

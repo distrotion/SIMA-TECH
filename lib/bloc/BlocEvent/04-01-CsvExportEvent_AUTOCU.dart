@@ -12,6 +12,7 @@ import '../../data/datadummy.dart';
 import '../../data/global.dart';
 import '../../data/model.dart';
 import '../../data/modelmaster.dart';
+import '../../data/simatechlite.dart';
 import '../../data/test.dart';
 import '../../page/02Report_AUTOSN/ReportMAIN_AUTOSN.dart';
 import '../../page/02Report_AUTOSN/ReportVAR_AUTOSN.dart';
@@ -42,7 +43,7 @@ class CsvExport_AUTOCU_Bloc
   Future<void> _CsvExport_AUTOCUGet_Function(List<YMDDATAMASTERmodel> toAdd,
       Emitter<List<YMDDATAMASTERmodel>> emit) async {
     final response = await Dio().post(
-      server + "selectedDate_AUTOCU",
+      server + "selectedDate_AUTORM",
       data: {"date": ReportVAR_AUTOCU.selectedDate},
     );
 
@@ -54,21 +55,23 @@ class CsvExport_AUTOCU_Bloc
     // });
 
     List<YMDDATAMASTERmodel> output = [];
-    // if (true) {
-    if (response.statusCode == 200) {
-      var databuff = response.data;
+    if (true) {
+      // if (response.statusCode == 200) {
+      //   var databuff = response.data;
+      var databuff = data150624;
       // var databuff = testdata;
 
       for (var i = 0; i < databuff.length; i++) {
         //
         output.add(YMDDATAMASTERmodel(
           NO: '${i + 1}',
-          Item: _NullCheck(databuff[i]['ItemID']),
-          ItemNO: _NullCheck(databuff[i]['ItemNO']),
-          PartNO: _NullCheck(databuff[i]['PartNumber']),
-          PartName: _NullCheck(databuff[i]['PartName']),
-          QTY: _NullCheck(databuff[i]['QTY']),
-          LoadingTime01: _daycon(_NullCheck(databuff[i]['LoadingTime'])),
+          Item: _NullCheck(databuff[i]['BarNo']),
+          PartNO: _NullCheck(databuff[i]['Program']),
+          PartName: _NullCheck(databuff[i]['ProgramName']),
+
+          LoadingTime01: _daycon(_NullCheck(databuff[i]['TimeGetIn'])),
+          UnloadingTime47: _daycon(_NullCheck(databuff[i]['TimeGetOut'])),
+
           Tank02Temp: todesimol(_NullCheck(databuff[i]['State02tempPV'])),
           Tank02Time: _NullCheck(databuff[i]['State02timePV']),
 
@@ -210,6 +213,10 @@ class CsvExport_AUTOCU_Bloc
           Tank44Temp: todesimol(_NullCheck(databuff[i]['State44tempPV'])),
           Tank45Time: _NullCheck(databuff[i]['State45timePV']),
           Tank45Temp: todesimol(_NullCheck(databuff[i]['State45tempPV'])),
+          Tank46Time: _NullCheck(databuff[i]['State46timePV']),
+          Tank46Temp: todesimol(_NullCheck(databuff[i]['State46tempPV'])),
+          Tank47Time: _NullCheck(databuff[i]['State47timePV']),
+          Tank47Temp: todesimol(_NullCheck(databuff[i]['State47tempPV'])),
         ));
       }
     } else {
@@ -222,7 +229,7 @@ class CsvExport_AUTOCU_Bloc
   Future<void> _CsvExport_AUTOCUGet_Function_R(List<YMDDATAMASTERmodel> toAdd,
       Emitter<List<YMDDATAMASTERmodel>> emit) async {
     final response = await Dio().post(
-      server + "selectedDate_AUTOCU",
+      server + "selectedDate_AUTORM",
       data: {"date": ReportVAR_AUTOCU.selectedDate},
     );
 
@@ -235,21 +242,23 @@ class CsvExport_AUTOCU_Bloc
 
     List<YMDDATAMASTERmodel> output = [];
 
-    if (response.statusCode == 200) {
-      // if (true) {
-      var databuff = response.data;
+    if (true) {
+      // if (response.statusCode == 200) {
+      // var databuff = response.data;
+      var databuff = data150624;
       // var databuff = testdata;
 
       for (var i = 0; i < databuff.length; i++) {
         //
         output.add(YMDDATAMASTERmodel(
           NO: '${i + 1}',
-          Item: _NullCheck(databuff[i]['ItemID']),
-          ItemNO: _NullCheck(databuff[i]['ItemNO']),
-          PartNO: _NullCheck(databuff[i]['PartNumber']),
-          PartName: _NullCheck(databuff[i]['PartName']),
-          QTY: _NullCheck(databuff[i]['QTY']),
-          LoadingTime01: _daycon(_NullCheck(databuff[i]['LoadingTime'])),
+          Item: _NullCheck(databuff[i]['BarNo']),
+          PartNO: _NullCheck(databuff[i]['Program']),
+          PartName: _NullCheck(databuff[i]['ProgramName']),
+
+          LoadingTime01: _daycon(_NullCheck(databuff[i]['TimeGetIn'])),
+          UnloadingTime47: _daycon(_NullCheck(databuff[i]['TimeGetOut'])),
+
           Tank02Temp: todesimol(_NullCheck(databuff[i]['State02tempPV'])),
           Tank02Time: _NullCheck(databuff[i]['State02timePV']),
 
@@ -391,6 +400,10 @@ class CsvExport_AUTOCU_Bloc
           Tank44Temp: todesimol(_NullCheck(databuff[i]['State44tempPV'])),
           Tank45Time: _NullCheck(databuff[i]['State45timePV']),
           Tank45Temp: todesimol(_NullCheck(databuff[i]['State45tempPV'])),
+          Tank46Time: _NullCheck(databuff[i]['State46timePV']),
+          Tank46Temp: todesimol(_NullCheck(databuff[i]['State46tempPV'])),
+          Tank47Time: _NullCheck(databuff[i]['State47timePV']),
+          Tank47Temp: todesimol(_NullCheck(databuff[i]['State47tempPV'])),
         ));
       }
     } else {
@@ -405,7 +418,11 @@ String _NullCheck(dynamic input) {
   String output = '-';
   if (input != null) {
     if (input != '0') {
-      output = input.toString();
+      if (input != 'NULL') {
+        output = input.toString();
+      } else {
+        output = '';
+      }
     }
   }
   return output;
@@ -418,230 +435,110 @@ ExpCSV(List<YMDDATAMASTERmodel> data) {
     List<dynamic> row = [];
     if (i == -1) {
       row.add('NO');
-      row.add('Item');
-      row.add('ItemNO');
-      row.add('PartNO');
-      row.add('PartName');
-      row.add('QTY');
-      row.add('LoadingTime01');
-      row.add('02Degressing1/1Temp');
-      row.add('02Degressing1/1Time');
-      row.add('03Degressing1/2Temp');
-      row.add('03Degressing1/2Time');
-      row.add('04WaterRinse');
-      row.add('05WaterRinse');
-      row.add('06Degressing2/1Temp');
-      row.add('06Degressing2/1Time');
-      row.add('07Degressing2/2Temp');
-      row.add('07Degressing2/2Time');
-      row.add('08WaterRinse');
-      row.add('09WaterRinse');
+      row.add('BAR');
+      row.add('ProgramNO');
+      row.add('ProgramName');
+      row.add('LoadingTime');
+      row.add('UnloadingTime');
+      row.add('02 RM oxide');
+      row.add('03 RM oxide');
+      row.add('04 RM oxide');
+      row.add('05 RM oxide');
+      row.add('06 RM oxide');
+      row.add('07 RM oxide');
+      row.add('08 RM oxide');
+      row.add('09 RM oxide');
+      row.add('10 RM oxide');
+      row.add('11 RM oxide');
+      row.add('12 RM oxide');
+      row.add('13 RM oxide');
+      row.add('14 RM oxide');
+      row.add('15 RM oxide');
+      row.add('16 RM oxide');
+      row.add('17 RM oxide');
+      row.add('18 RM oxide');
+      row.add('19 RM oxide');
+      row.add('20 RM oxide');
+      row.add('21 RM oxide');
+      row.add('22 Shower');
+      row.add('23 Water Risne');
+      row.add('24 Water Risne');
 
-      row.add('11ACID_WASHINGTemp');
-      row.add('11ACID_WASHINGTime');
-      row.add('12WaterRinse');
-      row.add('13WaterRinse');
-      row.add('14ACID_WASHINGTemp');
-      row.add('14ACID_WASHINGTime');
-      row.add('15WaterRinse');
-      row.add('16WaterRinse');
-      row.add('17Elec.Clean01Volt');
-      row.add('17Elec.Clean01Amp');
-      row.add('17Elec.Clean01Temp');
-      row.add('17Elec.Clean01Rpm');
-      row.add('17Elec.Clean01Time');
-      row.add('18WaterRinse');
-      row.add('19WaterRinse');
-      row.add('20Elec.Clean01Volt');
-      row.add('20Elec.Clean01Amp');
-      row.add('20Elec.Clean01Temp');
-      row.add('20Elec.Clean01Rpm');
-      row.add('20Elec.Clean01Time');
-      row.add('21WaterRinse');
-      row.add('22WaterRinse');
-      row.add('24Elec.CyanideVolt');
-      row.add('24Elec.CyanideAmp');
-      row.add('24Elec.CyanideTemp');
-      row.add('24Elec.CyanideRpm');
-      row.add('24Elec.CyanideTime');
-      row.add('25WaterRinse');
-      row.add('27CU_Strike01Volt');
-      row.add('27CU_Strike01Amp');
-      row.add('27CU_Strike01Temp');
-      row.add('27CU_Strike01Rpm');
-      row.add('27CU_Strike01Time');
-      row.add('28CU_Strike02Volt');
-      row.add('28CU_Strike02Amp');
-      row.add('28CU_Strike02Temp');
-      row.add('28CU_Strike02Rpm');
-      row.add('28CU_Strike02Time');
-      row.add('29WaterRinse');
-
-      row.add('30CU_Plate01Volt');
-      row.add('30CU_Plate01Amp');
-      row.add('30CU_Plate01Temp');
-      row.add('30CU_Plate01Rpm');
-      row.add('30CU_Plate01Time');
-      row.add('31CU_Plate01Volt');
-      row.add('31CU_Plate01Amp');
-      row.add('31CU_Plate01Temp');
-      row.add('31CU_Plate01Rpm');
-      row.add('31CU_Plate01Time');
-      row.add('32WaterRinse');
-      row.add('33CU_Plate01Volt');
-      row.add('33CU_Plate01Amp');
-      row.add('33CU_Plate01Temp');
-      row.add('33CU_Plate01Rpm');
-      row.add('33CU_Plate01Time');
-      row.add('34CU_Plate01Volt');
-      row.add('34CU_Plate01Amp');
-      row.add('34CU_Plate01Temp');
-      row.add('34CU_Plate01Rpm');
-      row.add('34CU_Plate01Time');
-      row.add('35WaterRinse');
-      row.add('36CU_Plate01Volt');
-      row.add('36CU_Plate01Amp');
-      row.add('36CU_Plate01Temp');
-      row.add('36CU_Plate01Rpm');
-      row.add('36CU_Plate01Time');
-      row.add('37CU_Plate01Volt');
-      row.add('37CU_Plate01Amp');
-      row.add('37CU_Plate01Temp');
-      row.add('37CU_Plate01Rpm');
-      row.add('37CU_Plate01Time');
-      row.add('38WaterRinse');
-      row.add('40WaterRinse');
-      row.add('41WaterRinse');
-      row.add('42PosteamentTemp');
-      row.add('42PosteamentTime');
-      row.add('43WaterRinse');
-      row.add('44WaterRinse');
-      row.add('45WaterRinse');
+      row.add('27 Water Risne');
+      row.add('28 HCL3');
+      row.add('29 Glass WH');
+      row.add('30 HF Shower');
+      row.add('31 Water Risne');
+      row.add('32 Water Risne');
+      row.add('33 Water Risne');
+      row.add('34 HCL1');
+      row.add('35 HCL2');
+      row.add('36 Water Risne');
+      row.add('37 Water Risne');
+      row.add('38 Water Risne');
+      row.add('39 Neutralizing');
+      row.add('40 Water Risne');
+      row.add('41 Water Risne');
+      row.add('42 Water Risne');
+      row.add('43 Water Cut');
+      row.add('44 Hot Rinse');
+      row.add('45 Hot Rinse');
+      row.add('46 Hot Rinse');
     } else {
       row.add(data[i].NO);
+
       row.add(data[i].Item);
-      row.add(data[i].ItemNO);
       row.add(data[i].PartNO);
       row.add(data[i].PartName);
-      row.add(data[i].QTY);
-      row.add((data[i].LoadingTime01));
-      row.add(data[i].Tank02Temp);
-      row.add(data[i].Tank02Time);
-      row.add(data[i].Tank03Temp);
-      row.add(data[i].Tank03Time);
+      row.add(data[i].LoadingTime01);
+      row.add(data[i].UnloadingTime47);
 
+      row.add(data[i].Tank02Time);
+      row.add(data[i].Tank03Time);
       row.add(data[i].Tank04Time);
       row.add(data[i].Tank05Time);
-
-      row.add(data[i].Tank06Temp);
       row.add(data[i].Tank06Time);
-      row.add(data[i].Tank07Temp);
       row.add(data[i].Tank07Time);
-
       row.add(data[i].Tank08Time);
       row.add(data[i].Tank09Time);
-
-      row.add(data[i].Tank11Temp);
+      row.add(data[i].Tank10Time);
       row.add(data[i].Tank11Time);
-
       row.add(data[i].Tank12Time);
       row.add(data[i].Tank13Time);
-
-      row.add(data[i].Tank14Temp);
       row.add(data[i].Tank14Time);
-
       row.add(data[i].Tank15Time);
       row.add(data[i].Tank16Time);
-
-      //
-      row.add(data[i].Tank17Volt);
-      row.add(data[i].Tank17Amp);
-      row.add(data[i].Tank17Temp);
-      row.add(data[i].Tank17Rpm);
       row.add(data[i].Tank17Time);
-      //
       row.add(data[i].Tank18Time);
       row.add(data[i].Tank19Time);
-      //
-      row.add(data[i].Tank20Volt);
-      row.add(data[i].Tank20Amp);
-      row.add(data[i].Tank20Temp);
-      row.add(data[i].Tank20Rpm);
       row.add(data[i].Tank20Time);
-      //
       row.add(data[i].Tank21Time);
       row.add(data[i].Tank22Time);
-      //
-      row.add(data[i].Tank24Volt);
-      row.add(data[i].Tank24Amp);
-      row.add(data[i].Tank24Temp);
-      row.add(data[i].Tank24Rpm);
+      row.add(data[i].Tank23Time);
       row.add(data[i].Tank24Time);
-      //
-      row.add(data[i].Tank25Time);
-      //
-      row.add(data[i].Tank27Volt);
-      row.add(data[i].Tank27Amp);
-      row.add(data[i].Tank27Temp);
-      row.add(data[i].Tank27Rpm);
+
       row.add(data[i].Tank27Time);
-
-      row.add(data[i].Tank28Volt);
-      row.add(data[i].Tank28Amp);
-      row.add(data[i].Tank28Temp);
-      row.add(data[i].Tank28Rpm);
       row.add(data[i].Tank28Time);
-      //
       row.add(data[i].Tank29Time);
-      //
-      row.add(data[i].Tank30Volt);
-      row.add(data[i].Tank30Amp);
-      row.add(data[i].Tank30Temp);
-      row.add(data[i].Tank30Rpm);
       row.add(data[i].Tank30Time);
-
-      row.add(data[i].Tank31Volt);
-      row.add(data[i].Tank31Amp);
-      row.add(data[i].Tank31Temp);
-      row.add(data[i].Tank31Rpm);
       row.add(data[i].Tank31Time);
-      //
       row.add(data[i].Tank32Time);
-      //
-      row.add(data[i].Tank33Volt);
-      row.add(data[i].Tank33Amp);
-      row.add(data[i].Tank33Temp);
-      row.add(data[i].Tank33Rpm);
       row.add(data[i].Tank33Time);
-
-      row.add(data[i].Tank34Volt);
-      row.add(data[i].Tank34Amp);
-      row.add(data[i].Tank34Temp);
-      row.add(data[i].Tank34Rpm);
       row.add(data[i].Tank34Time);
-      //
       row.add(data[i].Tank35Time);
-      //
-      row.add(data[i].Tank36Volt);
-      row.add(data[i].Tank36Amp);
-      row.add(data[i].Tank36Temp);
-      row.add(data[i].Tank36Rpm);
       row.add(data[i].Tank36Time);
-
-      row.add(data[i].Tank37Volt);
-      row.add(data[i].Tank37Amp);
-      row.add(data[i].Tank37Temp);
-      row.add(data[i].Tank37Rpm);
       row.add(data[i].Tank37Time);
-      //
       row.add(data[i].Tank38Time);
+      row.add(data[i].Tank39Time);
       row.add(data[i].Tank40Time);
+
       row.add(data[i].Tank41Time);
-      row.add(data[i].Tank42Temp);
       row.add(data[i].Tank42Time);
       row.add(data[i].Tank43Time);
       row.add(data[i].Tank44Time);
       row.add(data[i].Tank45Time);
+      row.add(data[i].Tank46Time);
+
       //
     }
 
@@ -689,4 +586,31 @@ String todesimol(String s) {
   }
 
   return output;
+}
+
+_Decimal_To_Text(String text) {
+  String input_Decimal_all = "";
+  input_Decimal_all = text;
+  List<String> list_Decimal_all = input_Decimal_all.split(",");
+
+  String text_all = "";
+  List<String> list_text_all = [];
+  for (int i = 0; i < list_Decimal_all.length; i++) {
+    String input_Decimal = "";
+    String binary = "";
+    String binary_4_R = "";
+    String binary_4_L = "";
+    String text_1 = "";
+    String text_2 = "";
+    input_Decimal = list_Decimal_all[i];
+    binary = int.parse(input_Decimal).toRadixString(2).padLeft(16, "0");
+    binary_4_R = binary.substring(8);
+    binary_4_L = binary.substring(0, 8);
+    text_1 = String.fromCharCode(int.parse(binary_4_R, radix: 2));
+    text_2 = String.fromCharCode(int.parse(binary_4_L, radix: 2));
+    list_text_all.add(text_1);
+    list_text_all.add(text_2);
+  }
+  text_all = list_text_all.join();
+  return text_all;
 }

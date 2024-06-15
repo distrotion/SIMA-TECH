@@ -88,74 +88,13 @@ class _Data_Menu_mainmenuState extends State<Data_Menu_mainmenu> {
                       ),
                     ),
                   ))),
-          InkWell(
-            onTap: () {
-              setState(() {
-                if (menu_AOTOSN01) {
-                  menu_AOTOSN01 = false;
-                } else {
-                  menu_AOTOSN01 = true;
-                }
-              });
-            },
-            child: SizedBox(
-              height: 50,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          right: 6.0, left: 6, top: 4.0, bottom: 4.0),
-                      child: Container(
-                        height: 24,
-                        width: 24,
-                        child: Icon(
-                          menu_AOTOSN01
-                              ? Icons.arrow_drop_up_outlined
-                              : Icons.arrow_drop_down_outlined,
-                          color: Colors.white,
-                        ),
-                        // decoration: BoxDecoration(
-                        //     image: DecorationImage(
-                        //         image: AssetImage(getShowHidePassword_ImgPath()),
-                        //         fit: BoxFit.fitHeight))
-                      ),
-                    ),
-                    const Text(
-                      "AUTO SN",
-                      style: TextStyle(
-                        fontFamily: 'Mitr',
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300,
-                        fontStyle: FontStyle.normal,
-                        letterSpacing: 0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          if (menu_AOTOSN01) ...[
-            menu_normal(
-              name: "DASHBOARD",
-              page: Page1(),
-            ),
-            menu_normal(
-              name: "Report",
-              page: Page2(),
-            ),
-          ],
-
           // InkWell(
           //   onTap: () {
           //     setState(() {
-          //       if (menu_AUTOCU01) {
-          //         menu_AUTOCU01 = false;
+          //       if (menu_AOTOSN01) {
+          //         menu_AOTOSN01 = false;
           //       } else {
-          //         menu_AUTOCU01 = true;
+          //         menu_AOTOSN01 = true;
           //       }
           //     });
           //   },
@@ -172,7 +111,7 @@ class _Data_Menu_mainmenuState extends State<Data_Menu_mainmenu> {
           //               height: 24,
           //               width: 24,
           //               child: Icon(
-          //                 menu_AUTOCU01
+          //                 menu_AOTOSN01
           //                     ? Icons.arrow_drop_up_outlined
           //                     : Icons.arrow_drop_down_outlined,
           //                 color: Colors.white,
@@ -184,7 +123,7 @@ class _Data_Menu_mainmenuState extends State<Data_Menu_mainmenu> {
           //             ),
           //           ),
           //           const Text(
-          //             "AUTO CU",
+          //             "AUTO SN",
           //             style: TextStyle(
           //               fontFamily: 'Mitr',
           //               color: Colors.white,
@@ -199,16 +138,77 @@ class _Data_Menu_mainmenuState extends State<Data_Menu_mainmenu> {
           //     ),
           //   ),
           // ),
-          // if (menu_AUTOCU01) ...[
+          // if (menu_AOTOSN01) ...[
           //   menu_normal(
           //     name: "DASHBOARD",
-          //     page: Page3(),
+          //     page: Page1(),
           //   ),
           //   menu_normal(
           //     name: "Report",
-          //     page: Page4(),
+          //     page: Page2(),
           //   ),
           // ],
+
+          InkWell(
+            onTap: () {
+              setState(() {
+                if (menu_AUTOCU01) {
+                  menu_AUTOCU01 = false;
+                } else {
+                  menu_AUTOCU01 = true;
+                }
+              });
+            },
+            child: SizedBox(
+              height: 50,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          right: 6.0, left: 6, top: 4.0, bottom: 4.0),
+                      child: Container(
+                        height: 24,
+                        width: 24,
+                        child: Icon(
+                          menu_AUTOCU01
+                              ? Icons.arrow_drop_up_outlined
+                              : Icons.arrow_drop_down_outlined,
+                          color: Colors.white,
+                        ),
+                        // decoration: BoxDecoration(
+                        //     image: DecorationImage(
+                        //         image: AssetImage(getShowHidePassword_ImgPath()),
+                        //         fit: BoxFit.fitHeight))
+                      ),
+                    ),
+                    const Text(
+                      "AUTO Remove Oxide",
+                      style: TextStyle(
+                        fontFamily: 'Mitr',
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                        fontStyle: FontStyle.normal,
+                        letterSpacing: 0,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          if (menu_AUTOCU01) ...[
+            menu_normal(
+              name: "DASHBOARD",
+              page: Page3(),
+            ),
+            menu_normal(
+              name: "Report",
+              page: Page4(),
+            ),
+          ],
 
           // InkWell(
           //   onTap: () {

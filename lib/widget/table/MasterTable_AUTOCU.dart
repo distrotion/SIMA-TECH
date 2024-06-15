@@ -28,7 +28,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0(
-                      Head: "Item",
+                      Head: "BAR",
                     ),
                   ],
                 ),
@@ -38,7 +38,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0(
-                      Head: "ItemNO",
+                      Head: "Program NO.",
                     ),
                   ],
                 ),
@@ -48,7 +48,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0(
-                      Head: "Part NO.",
+                      Head: "Program NAME",
                     ),
                   ],
                 ),
@@ -58,7 +58,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0(
-                      Head: "Part Name",
+                      Head: "LoadingTime",
                     ),
                   ],
                 ),
@@ -68,17 +68,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0(
-                      Head: "QTY",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type0(
-                      Head: "01LoadingTime",
+                      Head: "UnloadingTime",
                     ),
                   ],
                 ),
@@ -88,7 +78,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "02Degressing1/1",
+                      Head: "02 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -100,31 +90,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "03Degressing1/2",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "04WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "05WaterRinse",
+                      Head: "03 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -136,7 +102,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "06Degressing2/1",
+                      Head: "04 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -148,31 +114,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "07Degressing2/2",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "08WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "09WaterRinse",
+                      Head: "05 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -184,412 +126,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "10Wait",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "11ACID WASHING",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "12WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "13WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "14ACID WASHING",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "15WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "16WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "17Activetion",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "18WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "19WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "20Elec.Clean02",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "21WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "22WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "23WaitState",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "24Elec.Cyanide",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "25WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "26WaitState",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "27CU_Strike01",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "28CU_Strike02",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "29WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "30CU_Plate01",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "31CU_Plate02",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "32WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "33CU_Plate03",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "34CU_Plate04",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "35WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "36CU_Plate05",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2(
-                      Head: "37CU_Plate06",
-                      text01: "Volt",
-                      text02: "Amp",
-                      text03: "Temp",
-                      text04: "Rpm",
-                      text05: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "38WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "39WaitState",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "40WaterRinse",
-                      text01: "Temp",
-                      text02: "Time",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type1s(
-                      Head: "41WaterRinse",
+                      Head: "06 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -601,7 +138,175 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1(
-                      Head: "42Posteament",
+                      Head: "07 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "08 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "09 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "10 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "11 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "12 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "13 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "14 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "15 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "16 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "17 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "18 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "19 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "20 Remove Oxide",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "21 Remove Oxide",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -613,7 +318,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1s(
-                      Head: "43WaterRinse",
+                      Head: "22 Shower",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -625,7 +330,7 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1s(
-                      Head: "44WaterRinse",
+                      Head: "23 Water Rinse",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -637,7 +342,271 @@ class MasterTable_AUTOCU extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1s(
-                      Head: "45WaterRinse",
+                      Head: "24 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "25 TR",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "26 TR",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "27 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "28 HCL3",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "29 Glass washing",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "30 HF shower",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "31 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "32 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "33 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "34 HCL 1",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "35 HCL 2",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "36 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "37 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "38 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "39 Neutralizing",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "40 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "41 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "42 Water Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1s(
+                      Head: "43 Water cut",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "44 Hot Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "45 Hot Rinse",
+                      text01: "Temp",
+                      text02: "Time",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1(
+                      Head: "46 Hot Rinse",
                       text01: "Temp",
                       text02: "Time",
                     ),
@@ -662,6 +631,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
     this.PartName,
     this.QTY,
     this.LoadingTime01,
+    this.UnloadingTime47,
     this.Tank02Temp,
     this.Tank02Time,
     this.Tank03Temp,
@@ -799,6 +769,10 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
     this.Tank44Time,
     this.Tank45Temp,
     this.Tank45Time,
+    this.Tank46Temp,
+    this.Tank46Time,
+    this.Tank47Temp,
+    this.Tank47Time,
     this.nint,
     this.SetParName,
   });
@@ -809,6 +783,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
   String? PartName;
   String? QTY;
   String? LoadingTime01;
+  String? UnloadingTime47;
   String? Tank02Temp;
   String? Tank02Time;
   String? Tank03Temp;
@@ -946,6 +921,10 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
   String? Tank44Time;
   String? Tank45Temp;
   String? Tank45Time;
+  String? Tank46Temp;
+  String? Tank46Time;
+  String? Tank47Temp;
+  String? Tank47Time;
 
   int? nint;
 
@@ -984,44 +963,17 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type0_data(
-                      Head: ItemNO,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 120,
-                child: Column(
-                  children: [
-                    rowbox_type0_data(
                       Head: PartNO,
                     ),
                   ],
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  if (SetParName != null) {
-                    SetParName!(Item ?? '');
-                  }
-                },
-                child: SizedBox(
-                  width: 120,
-                  child: Column(
-                    children: [
-                      rowbox_type0_data(
-                        Head: PartName,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               SizedBox(
                 width: 120,
                 child: Column(
                   children: [
                     rowbox_type0_data(
-                      Head: QTY,
+                      Head: PartName,
                     ),
                   ],
                 ),
@@ -1032,6 +984,16 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                   children: [
                     rowbox_type0_data(
                       Head: LoadingTime01,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type0_data(
+                      Head: UnloadingTime47,
                     ),
                   ],
                 ),
@@ -1064,7 +1026,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "04WaterRinse1",
                       text01: Tank04Temp,
                       text02: Tank04Time,
@@ -1076,7 +1038,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "05WaterRinse2",
                       text01: Tank05Temp,
                       text02: Tank05Time,
@@ -1112,7 +1074,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "08WaterRinse",
                       text01: Tank08Temp,
                       text02: Tank08Time,
@@ -1124,7 +1086,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "09WaterRinse",
                       text01: Tank09Temp,
                       text02: Tank09Time,
@@ -1136,7 +1098,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "10Wait",
                       text01: Tank10Temp,
                       text02: Tank10Time,
@@ -1160,7 +1122,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "12WaterRinse",
                       text01: Tank12Temp,
                       text02: Tank12Time,
@@ -1169,11 +1131,11 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
-                      Head: "13WaterRinse",
+                    rowbox_type1_data(
+                      Head: "13",
                       text01: Tank13Temp,
                       text02: Tank13Time,
                     ),
@@ -1181,11 +1143,11 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
                     rowbox_type1_data(
-                      Head: "14ACID WASHING",
+                      Head: "14",
                       text01: Tank14Temp,
                       text02: Tank14Time,
                     ),
@@ -1196,7 +1158,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "15WaterRinse",
                       text01: Tank15Temp,
                       text02: Tank15Time,
@@ -1208,7 +1170,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "16WaterRinse",
                       text01: Tank16Temp,
                       text02: Tank16Time,
@@ -1217,16 +1179,13 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "17Elec.Clean01",
-                      text01: Tank17Volt,
-                      text02: Tank17Amp,
-                      text03: Tank17Temp,
-                      text04: Tank17Rpm,
-                      text05: Tank17Time,
+                    rowbox_type1_data(
+                      Head: "17",
+                      text01: Tank17Temp,
+                      text02: Tank17Time,
                     ),
                   ],
                 ),
@@ -1235,7 +1194,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "18WaterRinse",
                       text01: Tank18Temp,
                       text02: Tank18Time,
@@ -1244,28 +1203,13 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
-                      Head: "19WaterRinse",
+                    rowbox_type1_data(
+                      Head: "19",
                       text01: Tank19Temp,
                       text02: Tank19Time,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2_data(
-                      Head: "20Elec.Clean02",
-                      text01: Tank20Volt,
-                      text02: Tank20Amp,
-                      text03: Tank20Temp,
-                      text04: Tank20Rpm,
-                      text05: Tank20Time,
                     ),
                   ],
                 ),
@@ -1274,7 +1218,19 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
+                      Head: "20",
+                      text01: Tank20Temp,
+                      text02: Tank20Time,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1_data(
                       Head: "21WaterRinse",
                       text01: Tank21Temp,
                       text02: Tank21Time,
@@ -1307,16 +1263,13 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "24Elec.Cyanide",
-                      text01: Tank24Volt,
-                      text02: Tank24Amp,
-                      text03: Tank24Temp,
-                      text04: Tank24Rpm,
-                      text05: Tank24Time,
+                    rowbox_type1_datas(
+                      Head: "24",
+                      text01: Tank24Temp,
+                      text02: Tank24Time,
                     ),
                   ],
                 ),
@@ -1346,31 +1299,25 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "27CU_Strike01",
-                      text01: Tank27Volt,
-                      text02: Tank27Amp,
-                      text03: Tank27Temp,
-                      text04: Tank27Rpm,
-                      text05: Tank27Time,
+                    rowbox_type1_datas(
+                      Head: "27",
+                      text01: Tank27Temp,
+                      text02: Tank27Time,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "28CU_Strike02",
-                      text01: Tank28Volt,
-                      text02: Tank28Amp,
-                      text03: Tank28Temp,
-                      text04: Tank28Rpm,
-                      text05: Tank28Time,
+                    rowbox_type1_data(
+                      Head: "28",
+                      text01: Tank28Temp,
+                      text02: Tank28Time,
                     ),
                   ],
                 ),
@@ -1380,7 +1327,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1_datas(
-                      Head: "29WaterRinse",
+                      Head: "29",
                       text01: Tank29Temp,
                       text02: Tank29Time,
                     ),
@@ -1388,31 +1335,25 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "30CU_Plate01",
-                      text01: Tank30Volt,
-                      text02: Tank30Amp,
-                      text03: Tank30Temp,
-                      text04: Tank30Rpm,
-                      text05: Tank30Time,
+                    rowbox_type1_datas(
+                      Head: "30",
+                      text01: Tank30Temp,
+                      text02: Tank30Time,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "31CU_Plate02",
-                      text01: Tank31Volt,
-                      text02: Tank31Amp,
-                      text03: Tank31Temp,
-                      text04: Tank31Rpm,
-                      text05: Tank31Time,
+                    rowbox_type1_datas(
+                      Head: "31",
+                      text01: Tank31Temp,
+                      text02: Tank31Time,
                     ),
                   ],
                 ),
@@ -1430,31 +1371,37 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "33CU_Plate03",
-                      text01: Tank33Volt,
-                      text02: Tank33Amp,
-                      text03: Tank33Temp,
-                      text04: Tank33Rpm,
-                      text05: Tank33Time,
+                    rowbox_type1_datas(
+                      Head: "33",
+                      text01: Tank33Temp,
+                      text02: Tank33Time,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "34CU_Plate04",
-                      text01: Tank34Volt,
-                      text02: Tank34Amp,
-                      text03: Tank34Temp,
-                      text04: Tank34Rpm,
-                      text05: Tank34Time,
+                    rowbox_type1_data(
+                      Head: "34",
+                      text01: Tank34Temp,
+                      text02: Tank34Time,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1_data(
+                      Head: "35WaterRinse",
+                      text01: Tank35Temp,
+                      text02: Tank35Time,
                     ),
                   ],
                 ),
@@ -1464,39 +1411,21 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 child: Column(
                   children: [
                     rowbox_type1_datas(
-                      Head: "35WaterRinse",
-                      text01: Tank35Temp,
-                      text02: Tank35Time,
+                      Head: "36",
+                      text01: Tank36Temp,
+                      text02: Tank36Time,
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                width: 200,
+                width: 120,
                 child: Column(
                   children: [
-                    rowbox_type2_data(
-                      Head: "36CU_Plate05",
-                      text01: Tank36Volt,
-                      text02: Tank36Amp,
-                      text03: Tank36Temp,
-                      text04: Tank36Rpm,
-                      text05: Tank36Time,
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 200,
-                child: Column(
-                  children: [
-                    rowbox_type2_data(
-                      Head: "37CU_Plate06",
-                      text01: Tank37Volt,
-                      text02: Tank37Amp,
-                      text03: Tank37Temp,
-                      text04: Tank37Rpm,
-                      text05: Tank37Time,
+                    rowbox_type1_datas(
+                      Head: "37",
+                      text01: Tank37Temp,
+                      text02: Tank37Time,
                     ),
                   ],
                 ),
@@ -1553,7 +1482,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_data(
+                    rowbox_type1_datas(
                       Head: "42Posteament",
                       text01: Tank42Temp,
                       text02: Tank42Time,
@@ -1577,7 +1506,7 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "44WaterRinse",
                       text01: Tank44Temp,
                       text02: Tank44Time,
@@ -1589,10 +1518,22 @@ class MasterTable_AUTOCUDATA extends StatelessWidget {
                 width: 120,
                 child: Column(
                   children: [
-                    rowbox_type1_datas(
+                    rowbox_type1_data(
                       Head: "45WaterRinse",
                       text01: Tank45Temp,
                       text02: Tank45Time,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 120,
+                child: Column(
+                  children: [
+                    rowbox_type1_data(
+                      Head: "46WaterRinse",
+                      text01: Tank46Temp,
+                      text02: Tank46Time,
                     ),
                   ],
                 ),

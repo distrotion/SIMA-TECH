@@ -23,10 +23,10 @@ class PageLevel {
 }
 
 // String GserverYMD = 'http://192.168.71.102:1885/';
-String GserverYMD = 'http://192.168.1.148:1885/';
+String GserverYMD = 'http://127.0.0.1:1880/';
 
 //
-// String GserverNEWTEST = 'http://127.0.0.1:14500/';
+// String GserverNEWTEST = 'http://127.0.0.1:1880/';
 
 late Timer Dashboardvar_AUTOSN_DHtimer;
 late Timer Dashboardvar_AUTOCU_DHtimer;

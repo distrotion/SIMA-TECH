@@ -34,7 +34,7 @@ class ACTUALDATA_Bloc extends Bloc<ACTUALDATA_Event, List<YMDDATAmodel>> {
     if (true) {
       // var databuff = response.data;
       // var databuff = datasima;
-      var databuff = datasimalite;
+      var databuff = data150624;
       // print(databuff);datasimalite
       for (var i = 0; i < databuff.length; i++) {
         //
